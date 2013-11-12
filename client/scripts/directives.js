@@ -48,10 +48,9 @@ angular.module('buzaApp.directives', [])
                 name: "=",
                 city: "=",
                 state: "=",
-                gradyear: "=",
-                education: "="
+                year: "="
             },
-            template: '<h4>{{name}} - {{city}}, {{state}}' + '<span class="label label-info pull-right">Graduated {{gradyear}}</span>' + '</h4>' + '<p ng-transclude>{{education}}</p>'
+            template: '<h4>{{name}} - {{city}}, {{state}}' + '<span class="label label-info pull-right">Graduated {{year}}</span></h4>' + '<div ng-transclude></div>'
         }
     })
     .directive('employment', function(Employment) {

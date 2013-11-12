@@ -40,11 +40,56 @@ angular.module('buzaApp.services', [])
 
     })
     .factory('Employment', function() {
-        return {
-            title:"Title",
-            msg:"Hello Kitty"
-        };
-    })
+            return [{
+                "city": "Jackson",
+                "employer": "Navagis LLC, Google Enterprise Partner",
+                "end": "2013",
+                "jobs": [{
+                    "highlight": "Developed android",
+                    "description": "Developed android application",
+                    "hasProject": false,
+                    "projectTitle": "",
+                    "projectUrl": ""
+                }, {
+                    "highlight": "Ate so much sushi, it's funny",
+                    "description": "Ate so much sushi, it's funny you heard",
+                    "hasProject": true,
+                    "projectTitle": "Mobile Recon",
+                    "projectUrl": "http://mobilerecon.com"
+                }],
+                "location": {
+                    "lat": "",
+                    "lng": ""
+                },
+                "position": "Jr. Mobile Developer",
+                "start": "2012",
+                "state": "MS"
+        },{
+                "city": "Jackson",
+                "employer": "Navagis LLC, Google Enterprise Partner",
+                "end": "2013",
+                "jobs": [{
+                    "highlight": "Developed android",
+                    "description": "Developed android application",
+                    "hasProject": false,
+                    "projectTitle": "",
+                    "projectUrl": ""
+                }, {
+                    "highlight": "Ate so much sushi, it's funny",
+                    "description": "Ate so much sushi, it's funny you heard",
+                    "hasProject": true,
+                    "projectTitle": "Mobile Recon",
+                    "projectUrl": "http://mobilerecon.com"
+                }],
+                "location": {
+                    "lat": "",
+                    "lng": ""
+                },
+                "position": "Jr. Mobile Developer",
+                "start": "2012",
+                "state": "MS"
+        }];
+})
     .factory('Hero', function() {
         return {
             title: "Joe Buza",

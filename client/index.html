@@ -72,8 +72,8 @@
             <h2>Education</h2>
 
             <education ng-repeat="school in schools">
-                <school name="school.name" city="school.city" state="school.state" gradyear="school.gradYear">
-                    {{school.education}}
+                <school name="school.name" city="school.city" state="school.state" year="school.gradYear">
+                    <p>{{school.education}}</p>
                 </school>
 
             </education>
@@ -94,7 +94,32 @@
 
         <div id="employment" class="span12" ng-controller="EmploymentCtrl">
             <h2>Employment</h2>
-            <employment></employment>
+<!--             <employment ng-repeat="job in jobs">
+                <school name="job.employer" city="job.city" state="job.state" year="job.start - job.end">
+                    <h5>{{job.position}}</h5>
+                </school>
+            </employment> -->
+
+            <div class="well well-small" ng-repeat="job in jobs">
+                <h4>{{job.employer}}, {{job.city}}, {{job.state}}
+                    <span class="label label-info pull-right">{{job.start}} – {{job.end}}</span>
+                </h4>
+                <h5>{{job.position}}</h5>
+                <ul>
+                    <li ng-repeat="resp in job.jobs">
+                        <div ng-if="resp.hasProject == false">
+                            <strong>{{resp.highlight}}</strong>&nbsp;{{resp.description.replace(resp.highlight)}}
+                        </div>
+                        <div ng-if="resp.hasProject">
+                            <strong>{{resp.highlight}}</strong>&nbsp;{{resp.description.replace(resp.highlight)}}
+                            <br/>Link
+                            <strong><a class="resume-link" href="{{resp.projectUrl}}">{{resp.projectTitle ? resp.projectTitle: resp.projectUrl}}</a>
+                                <strong>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
 
         </div>
     </div>
