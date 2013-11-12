@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Joe Buza</title>
+    <meta name="description" content="Joe Buza's Resume">
+    <meta name="viewport" content="width=device-width">
+    <meta name="author" content="Joe Buza">
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="apple-touch-icon" href="images/touch-icon-iphone.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="images/touch-icon-ipad.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="images/touch-icon-iphone-retina.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="images/touch-icon-ipad-retina.png" />
+
+    <link rel="stylesheet" href="styles/bootstrap.css">
+    <link rel="stylesheet" href="styles/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="styles/webicons.css">
+    <link rel="stylesheet" href="styles/main.css">
+
+    <script src="scripts/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+
+
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="40" ng-app="buzaApp" ng-controller="AppCtrl">
+    <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+            <![endif]-->
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <button type="button" class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="brand" href="#home">Resume</a> 
+
+                <div class="nav-collapse collapse">
+                    <ul id="nav" class="nav">
+                        <li class="active"><a href="#home">Home</a>
+                        </li>
+                        <li><a href="#education">Education</a>
+                        </li>
+                        <li><a href="#skills">Skills</a>
+                        </li>
+                        <li><a href="#employment">Employment</a>
+                        </li>
+                        <li><a href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </div>
+    </div>
+    <div id="home" class="hero-unit" ng-controller="HeroCtrl">
+        <hero title="hero.title" brand="hero.brand" />
+    </div>
+
+    <div class="container" ng-view>
+        <div id="education" class="span12" ng-controller="EducationCtrl">
+            <h2>Education</h2>
+
+            <education ng-repeat="school in schools">
+                <school name="school.name" city="school.city" state="school.state" gradyear="school.gradYear">
+                    {{school.education}}
+                </school>
+
+            </education>
+
+        </div>
+
+        <div id="skills" class="span12" ng-controller="SkillsCtrl">
+            <h2>Skills</h2>
+            <div class="well well-small">
+                <h4 ng-repeat-start="skill in skills">{{skill.category}}</h4>
+                <ul ng-repeat-end>
+                    <li>{{skillsString(skill.skills)}}</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div id="employment" class="span12" ng-controller="EmploymentCtrl">
+            <h2>Employment</h2>
+            <employment></employment>
+
+        </div>
+    </div>
+    <!-- /container -->
+
+    <footer id="contact" class="footer" ng-controller="FooterCtrl">
+        <div class="container">
+            <h4 class="muted">Contact Me</h4>
+            <ul class="footer-link">
+                <li><a class="webicon linkedin" href="http://www.linkedin.com/pub/joe-buza/21/387/94">Linkedin</a>
+                </li>
+                <li><a class="webicon github" href="https://github.com/mujuni88">Github</a>
+                </li>
+                <li><a class="webicon mail" href="mailto:joe_buza@me.com">Mail</a>
+                </li>
+            </ul>
+            <p class="muted">Inspired by <a href="http://josh.amplifiedcomputers.com/">Joshua B. Hall</a>
+            </p>
+        </div>
+    </footer>
+
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script>
+    window.jQuery || document.write('<script src="scripts/vendor/jquery-1.10.1.min.js"><\/script>')
+    </script>
+
+    <script src="scripts/vendor/bootstrap.min.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/services.js"></script>
+    <script src="scripts/controllers.js"></script>
+    <script src="scripts/filters.js"></script>
+    <script src="scripts/directives.js"></script>
+
+    <script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-45326411-1', 'xxxx');
+    ga('send', 'pageview');
+    </script>
+</body>
+
+</html>

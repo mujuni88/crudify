@@ -1,0 +1,21 @@
+<div class="well well-small" ng-repeat="job in jobs" ng-template>
+    <h4>{{job.employer}}, {{job.city}}, {{job.state}}
+        <span class="label label-info pull-right">{{job.start}} – {{job.end}}</span>
+    </h4>
+    <h5>{{job.position}}</h5>
+    <ul>
+        <li ng-repeat="resp in job.responsibilities">
+            <div ng-if="resp.hasProject == false">
+                <strong>{{resp.highlight}}</strong>&nbsp;{{resp.description.replace(resp.highlight)}}
+            </div>
+            <div ng-if="resp.hasProject">
+                <strong>{{resp.highlight}}</strong>&nbsp;{{resp.description.replace(resp.highlight)}}
+                <br/>Link
+                <strong><a class="resume-link" href="{{resp.project_url}}">{{resp.project_title ? resp.project_title: resp.project_url}}</a>
+                    <strong>
+            </div>
+        </li>
+    </ul>
+</div>
+
+</div>

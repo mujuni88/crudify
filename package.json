@@ -1,0 +1,29 @@
+{
+  "name": "crudify",
+  "version": "0.0.0",
+  "description": "Creating a CRUD app using Angular.js and Express.js",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "keywords": [
+    "angularjs",
+    "expressjs",
+    "nodejs"
+  ],
+  "author": "Joe Buza",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "express": "3.4.4",
+    "mongoskin": "0.6.0"
+  },
+  "devDependencies": {
+    "mocha": "1.13.0",
+    "expect.js": "0.2.0",
+    "superagent": "0.15.7",
+    "reload": "~0.1.0"
+  }
+}
