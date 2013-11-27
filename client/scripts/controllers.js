@@ -10,7 +10,9 @@ angular.module('buzaApp.controllers', [])
 
     })
     .controller('SkillsCtrl', function($scope, Skills) {
-        $scope.skills = Skills;
+        Skills.query(function(resp){
+            console.log("Skills control "+resp);
+        });
 
         $scope.skillsString = function(inputs) {
             var out = "",

@@ -1,5 +1,5 @@
-angular.module('buzaApp.services', [])
-    .factory('Skills', function() {
+angular.module('buzaApp.services', ['ngResource'])
+    .factory('Skills', function($resource) {
         return [{
             category: "Programming Languages",
             skills: ["Java", "Javascript", "C++"]
@@ -10,6 +10,17 @@ angular.module('buzaApp.services', [])
             category: "Operating Systems",
             skills: ["Mac OS X", "Linux", "Windows"]
         }];
+        
+
+        // return $resource('http://localhost:3000/skill/', {}, {
+        //     query: {
+        //         method: 'GET',
+        //         headers: {
+        //             'Content-Type': 'application/json'
+        //         },
+        //         isArray:true
+        //     }
+        // });
 
     })
     .factory('Education', function() {
@@ -40,56 +51,56 @@ angular.module('buzaApp.services', [])
 
     })
     .factory('Employment', function() {
-            return [{
-                "city": "Jackson",
-                "employer": "Navagis LLC, Google Enterprise Partner",
-                "end": "2013",
-                "jobs": [{
-                    "highlight": "Developed android",
-                    "description": "Developed android application",
-                    "hasProject": false,
-                    "projectTitle": "",
-                    "projectUrl": ""
-                }, {
-                    "highlight": "Ate so much sushi, it's funny",
-                    "description": "Ate so much sushi, it's funny you heard",
-                    "hasProject": true,
-                    "projectTitle": "Mobile Recon",
-                    "projectUrl": "http://mobilerecon.com"
-                }],
-                "location": {
-                    "lat": "",
-                    "lng": ""
-                },
-                "position": "Jr. Mobile Developer",
-                "start": "2012",
-                "state": "MS"
-        },{
-                "city": "Jackson",
-                "employer": "Navagis LLC, Google Enterprise Partner",
-                "end": "2013",
-                "jobs": [{
-                    "highlight": "Developed android",
-                    "description": "Developed android application",
-                    "hasProject": false,
-                    "projectTitle": "",
-                    "projectUrl": ""
-                }, {
-                    "highlight": "Ate so much sushi, it's funny",
-                    "description": "Ate so much sushi, it's funny you heard",
-                    "hasProject": true,
-                    "projectTitle": "Mobile Recon",
-                    "projectUrl": "http://mobilerecon.com"
-                }],
-                "location": {
-                    "lat": "",
-                    "lng": ""
-                },
-                "position": "Jr. Mobile Developer",
-                "start": "2012",
-                "state": "MS"
+        return [{
+            "city": "Jackson",
+            "employer": "Navagis LLC, Google Enterprise Partner",
+            "end": "2013",
+            "jobs": [{
+                "highlight": "Developed android",
+                "description": "Developed android application",
+                "hasProject": false,
+                "projectTitle": "",
+                "projectUrl": ""
+            }, {
+                "highlight": "Ate so much sushi, it's funny",
+                "description": "Ate so much sushi, it's funny you heard",
+                "hasProject": true,
+                "projectTitle": "Mobile Recon",
+                "projectUrl": "http://mobilerecon.com"
+            }],
+            "location": {
+                "lat": "",
+                "lng": ""
+            },
+            "position": "Jr. Mobile Developer",
+            "start": "2012",
+            "state": "MS"
+        }, {
+            "city": "Jackson",
+            "employer": "Navagis LLC, Google Enterprise Partner",
+            "end": "2013",
+            "jobs": [{
+                "highlight": "Developed android",
+                "description": "Developed android application",
+                "hasProject": false,
+                "projectTitle": "",
+                "projectUrl": ""
+            }, {
+                "highlight": "Ate so much sushi, it's funny",
+                "description": "Ate so much sushi, it's funny you heard",
+                "hasProject": true,
+                "projectTitle": "Mobile Recon",
+                "projectUrl": "http://mobilerecon.com"
+            }],
+            "location": {
+                "lat": "",
+                "lng": ""
+            },
+            "position": "Jr. Mobile Developer",
+            "start": "2012",
+            "state": "MS"
         }];
-})
+    })
     .factory('Hero', function() {
         return {
             title: "Joe Buza",

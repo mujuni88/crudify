@@ -1,35 +1,4 @@
 angular.module('buzaApp.directives', [])
-    .directive('appendAndOnLastItem', function() {
-        return {
-            restrict: 'A',
-            replace: true,
-            scope: {
-                skills: "="
-            },
-            link: function($scope) {
-
-                $scope.skillsString = function(inputs) {
-                    var out = "",
-                        length = inputs.length;
-
-                    for (var i = 0; i < length; i++) {
-                        if (i === length - 1) {
-                            var lio = out.lastIndexOf(',');
-                            out = out.slice(0, lio) + " and " + inputs[i];
-                        } else {
-                            out += inputs[i] + ", ";
-                        }
-                    }
-
-                    console.log(out);
-                    return out;
-                }
-
-            },
-            template: '<li>{{skillsString(skills)}}</li>'
-        }
-
-    })
     .directive('education', function() {
         return {
             restrict: 'E',
@@ -88,7 +57,7 @@ angular.module('buzaApp.directives', [])
             restrict: 'E',
             replace: true,
             scope: {
-                title: "=",
+                label: "=",
                 brand: "="
             },
             templateUrl: "partials/hero.html"

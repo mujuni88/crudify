@@ -25,7 +25,8 @@
     <link rel="stylesheet" href="styles/main.css">
 
     <script src="scripts/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+    <script src="http://code.angularjs.org/1.2.0/angular.min.js"></script>
+    <script src="http://code.angularjs.org/1.2.0/angular-resource.js"></script>
 
 
 </head>
@@ -64,7 +65,7 @@
         </div>
     </div>
     <div id="home" class="hero-unit" ng-controller="HeroCtrl">
-        <hero title="hero.title" brand="hero.brand" />
+        <hero label="hero.title" brand="hero.brand" />
     </div>
 
     <div class="container" ng-view>
