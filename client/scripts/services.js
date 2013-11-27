@@ -1,5 +1,5 @@
 angular.module('buzaApp.services', ['ngResource'])
-    .factory('Skills', function($resource) {
+    .factory('Skills', function() {
         return [{
             category: "Programming Languages",
             skills: ["Java", "Javascript", "C++"]

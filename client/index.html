@@ -109,10 +109,10 @@
                 <ul>
                     <li ng-repeat="resp in job.jobs">
                         <div ng-if="resp.hasProject == false">
-                            <strong>{{resp.highlight}}</strong>&nbsp;{{resp.description.replace(resp.highlight)}}
+                            <strong>{{resp.highlight}}</strong>{{resp.description.replace(resp.highlight,"")}}
                         </div>
                         <div ng-if="resp.hasProject">
-                            <strong>{{resp.highlight}}</strong>&nbsp;{{resp.description.replace(resp.highlight)}}
+                            <strong>{{resp.highlight}}</strong>{{resp.description.replace(resp.highlight,"")}}
                             <br/>Link
                             <strong><a class="resume-link" href="{{resp.projectUrl}}">{{resp.projectTitle ? resp.projectTitle: resp.projectUrl}}</a>
                                 <strong>
